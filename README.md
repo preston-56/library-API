@@ -120,5 +120,6 @@ class Favorite(models.Model):
 5. Register a New User and Login
    - Use `/register` to create a new user.
    - Use `/login` to generate a JWT token for authentication.
+  
 Once logged in, use the provided endpoints to manage books and authors.
 ---
