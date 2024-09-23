@@ -122,4 +122,5 @@ class Favorite(models.Model):
    - Use `/login` to generate a JWT token for authentication.
   
 Once logged in, use the provided endpoints to manage books and authors.
+
 ---
