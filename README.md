@@ -38,7 +38,7 @@
 ### **Favorites and Recommendations**:
 - `POST /favorites`: Add a book to the user's favorites list (JWT Protected).
 - `DELETE /favorites/:id`: Remove a book from the user's favorites list (JWT Protected).
-- `GET /favorites/recommendations`: Get 5 recommended books based on the user’s favorite books ==(JWT Protected).
+- `GET /favorites/`: Get 5 recommended books based on the user’s favorite books ==(JWT Protected).
 ---
 ### **Database Schema**
 ##### Models
