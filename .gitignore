@@ -5,7 +5,7 @@ env/
 # Ignore SQLite database
 db.sqlite3
 
-# Ignore compiled files
+# Ignore compiled Python files
 *.pyc
 __pycache__/
 
@@ -17,4 +17,19 @@ test.ipynb
 # Ignore IDE settings
 .vscode/
 .idea/
-__pycache__/
+
+# Ignore other common files/folders
+*.log
+*.bak
+*.swp
+*.swo
+
+# Ignore coverage reports and other build artifacts
+.coverage
+*.cover
+*.egg-info/
+dist/
+build/
+
+# Ignore Django migration files
+*/migrations/
