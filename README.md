@@ -231,6 +231,6 @@ python3 manage.py migrate
 - Use `/register` to create a new user.
 - Use `/login` to generate a JWT token for authentication.
 
-Once logged in, use the provided endpoints to manage these resources: books, authors and favorite.
+Once logged in, use the provided endpoints to manage these resources: `books`, `authors` and `favorite`.
 
 ---
