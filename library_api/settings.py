@@ -11,23 +11,29 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
+import environ
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialize environment variables
+env = environ.Env()
+
+# Read the .env file if it exists (useful for local development)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=i9e0(wah7zr0(mi#!#-!t@#e0q@05^st073u2he+#2*dk6+r!"
-
+# Use the secret key from the .env file
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -40,9 +46,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_simplejwt",
-    "library",
     'corsheaders',
-
+    'authors',
+    'books',
+    'favorite',
+    'user',
+    'login',
 ]
 
 REST_FRAMEWORK = {
@@ -73,7 +82,7 @@ ROOT_URLCONF = "library_api.urls"
 # Allow all origins (for development only, be more restrictive in production)
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    # Add your other allowed origins here
+    # Add other allowed origins here
 ]
 
 TEMPLATES = [
@@ -153,7 +162,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Add this section for JWT settings
-from datetime import timedelta
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Set access token lifetime to 60 minutes
