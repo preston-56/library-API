@@ -57,7 +57,7 @@
 
 - **User**:  A custom user model is defined to handle user registration and authentication via JWT. This model includes the fields `username`, `email`, and `password` for managing users.
 
-  ```python
+```python
   from django.db import models
 
   class User(models.Model):
@@ -68,7 +68,7 @@
     def __str__(self):
         return self.username
 
-  ```
+```
   - This custom `User` model is used for user management, enabling secure registration, login, and JWT-based authentication for API access.
 - **Book**:
 
