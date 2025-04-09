@@ -13,6 +13,7 @@ from rest_framework import permissions
 from authors.routes.author import AuthorViewSet
 from books.routes.book import BookViewSet
 from favorite.routes.favorite import FavoriteViewSet
+from blacklist.routes.blacklist import BlacklistViewSet
 
 # Auth-related views
 from user.routes.user import RegisterView
@@ -23,6 +24,7 @@ router = DefaultRouter()
 router.register(r"authors", AuthorViewSet)
 router.register(r"books", BookViewSet)
 router.register(r"favorites", FavoriteViewSet)
+router.register(r"blacklist", BlacklistViewSet)
 
 # Swagger schema view setup
 schema_view = get_schema_view(
