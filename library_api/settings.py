@@ -31,9 +31,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # Use the secret key from the .env file
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 # Application definition
 
@@ -112,11 +112,11 @@ WSGI_APPLICATION = "library_api.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME", "authors_db"),
-        "USER": os.getenv("DB_USER", "book_user"),
-        "PASSWORD": os.getenv("DB_PASSWORD", "@book24**"),
-        "HOST": os.getenv("DB_HOST", "book_host"),
-        "PORT": os.getenv("DB_PORT", "5432"),
+        "NAME": env('DB_NAME'),
+        "USER": env('DB_USER'),
+        "PASSWORD": env('DB_PASSWORD'),
+        "HOST": env('DB_HOST'),
+        "PORT": env('DB_PORT'),
     }
 }
 
