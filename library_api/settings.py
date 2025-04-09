@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'favorite',
     'user',
     'login',
+    'drf_yasg', # for Swagger UI
 ]
 
 REST_FRAMEWORK = {
@@ -137,7 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -153,7 +153,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+# Static files settings (Required for Swagger UI)
+STATIC_URL = '/static/'  # URL to access static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # point to static files directory
+]
+
+# serve static files (for Swagger UI)
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
