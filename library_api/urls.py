@@ -20,15 +20,15 @@ from login.routes.login import LoginView
 from logout.routes.logout import LogoutView
 
 router = DefaultRouter()
-router.register(r'authors', AuthorViewSet)
-router.register(r'books', BookViewSet)
-router.register(r'favorites', FavoriteViewSet)
+router.register(r"authors", AuthorViewSet)
+router.register(r"books", BookViewSet)
+router.register(r"favorites", FavoriteViewSet)
 
 # Swagger schema view setup
 schema_view = get_schema_view(
     openapi.Info(
         title="Library API",
-        default_version='v1',
+        default_version="v1",
         description="API documentation for the Library project",
         contact=openapi.Contact(email="prestonosoro56@gmail.com"),
     ),
@@ -37,16 +37,27 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('api/register/', RegisterView.as_view(), name='register'),
-    path('api/login/', LoginView.as_view(), name='login'),
-    path('api/logout/', LogoutView.as_view(), name='logout'),
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
+    path("api/register/", RegisterView.as_view(), name="register"),
+    path("api/login/", LoginView.as_view(), name="login"),
+    path("api/logout/", LogoutView.as_view(), name="logout"),
 
-      # Swagger and Redoc
-    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    # Alias for accounts/logout
+    # path('accounts/logout/', LogoutView.as_view(), name='logout'),
+
+    # Swagger and Redoc
+    re_path(
+        r"^swagger(?P<format>\.json|\.yaml)$",
+        schema_view.without_ui(cache_timeout=0),
+        name="schema-json",
+    ),
+    path(
+        "swagger/",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
+    path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 ]
 
 # Serve static files in development
