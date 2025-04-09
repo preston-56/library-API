@@ -51,19 +51,6 @@
 
 ---
 
-## Library API Documentation
-
-- **Swagger UI**: The interactive API documentation can be accessed at the following URL:
-
-  - [Swagger UI](http://127.0.0.1:8000/swagger/) [`http://127.0.0.1:8000/swagger/`]
-  - You can use Swagger UI to view, test, and interact with the API endpoints.
-  - To perform protected actions, simply provide your JWT token in the `Authorize`section.
-- **ReDoc**: The static API documentation is available at the following URL:
-
-  - [ReDoc UI](http://127.0.0.1:8000/redoc/) [`http://127.0.0.1:8000/swagger/`]
-
-  ReDoc provides a clean, human-readable layout for understanding the API structure and details, but does not allow you to interact with the API directly.
-
 ### **Database Schema**
 
 ##### Models
@@ -247,6 +234,19 @@ python3 manage.py migrate
 
 Once logged in, use the provided endpoints to manage these resources: `books`, `authors` and `favorite`.
 
+---
+## Library API Documentation
+
+- **Swagger UI**: The interactive API documentation can be accessed at the following URL:
+
+  - [Swagger UI](http://127.0.0.1:8000/swagger/) (`http://127.0.0.1:8000/swagger/`)
+  - You can use Swagger UI to view, test, and interact with the API endpoints.
+  - To perform protected actions, simply provide your JWT token in the `Authorize` section.
+- **ReDoc**: The static API documentation is available at the following URL:
+
+  - [ReDoc UI](http://127.0.0.1:8000/redoc/) (`http://127.0.0.1:8000/swagger/`)
+
+  - ReDoc provides a clean, human-readable layout for understanding the API structure and details, but does not allow you to interact with the API directly.
 ---
 
 ### Additional Information
