@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'user',
     'login',
     'drf_yasg', # for Swagger UI
+    'blacklist',
 ]
 
 REST_FRAMEWORK = {
