@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from favorite.models.books import Favorite, Book
+from books.serializers.book import BookSerializer
 from favorite.serializers.favorite import FavoriteSerializer
 
 from drf_yasg.utils import swagger_auto_schema
@@ -58,7 +59,7 @@ class FavoriteViewSet(viewsets.ModelViewSet):
         recommended_books = recommended_books[:5]
 
         # Serialize the recommended books
-        recommended_books_serializer = FavoriteSerializer(recommended_books, many=True)
+        recommended_books_serializer = BookSerializer(recommended_books, many=True)
 
         return Response(recommended_books_serializer.data)
 
