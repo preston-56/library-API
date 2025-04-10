@@ -14,3 +14,5 @@ class Author(models.Model):
             return cls.objects.get(name=author_name).id
         except cls.DoesNotExist:
             return None
+    class Meta:
+        db_table = 'library_author'
