@@ -199,15 +199,19 @@ Before applying migrations, ensure your database is correctly configured.
 
   ```bash
   psql -U postgres
-  CREATE DATABASE library_db;
+  CREATE DATABASE <DB_NAME>;
   ```
-- Ensure the database name matches what is defined in your `.env` file.
-- **Set Up the Database Connection:** Configure the database URL in your `.env `file as follows:
+- Ensure that `<DB_NAME>` matches the database name defined in your `.env` file.
+- **Configure your Database Connection:** In your `.env `file, set the following environment variables to configure the database connection:
 
-  ```ini
-  DATABASE_URL=postgres://your-db-user:your-db-password@localhost:5432/library_db
+  ```bash
+  DB_NAME=<your_db_name>
+  DB_USER=<your_db_user>
+  DB_PASSWORD=<your_db_password>
+  DB_HOST=localhost
+  DB_PORT=5432
   ```
-- Replace `your-db-user` and `your-db-password` with your actual PostgreSQL credentials.
+- Replace `<your_db_name>`, `<your-db-user`>, and `<your-db-password>` with your actual PostgreSQL credentials.
 
 **5. Make Migrations**
 
