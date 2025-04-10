@@ -33,3 +33,4 @@ build/
 
 # Ignore Django migration files
 */migrations/
+.env
