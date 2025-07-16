@@ -1,6 +1,7 @@
 # Library Management System (Django RESTful API)
 
-**Overview:** This project is a Django-based RESTful API designed to manage books and authors, focusing on user authentication, search functionality, and book recommendations.
+### Overview:
+This project is a Django-based RESTful API designed to manage books and authors, focusing on user authentication, search functionality, and book recommendations.
 - The system supports adding, updating, retrieving, and deleting books and authors.
 - It includes a recommendation system that suggests books based on user favorites.
 - The system considers authors, genres, and themes from saved books to recommend similar titles.
